@@ -204,7 +204,7 @@ public class GraphDriver
         final int siteAmount = 10;
   
         // Initialize data structures
-        Sites[] sitesArray = new Sites[10];
+        Sites[] sitesArray = new Sites[siteAmount];
         int[][] edges = new int[siteAmount][siteAmount]; // Adjacency matrix for graph
         Scanner input = new Scanner(System.in);
 
@@ -221,17 +221,17 @@ public class GraphDriver
         edges[0][1] = 3;
         edges[1][0] = 3;
         edges[1][2] = 2;
-        edges[1][3] = 2;
         edges[2][1] = 2;
-        edges[2][3] = 4;
+        edges[1][3] = 2;
         edges[3][1] = 2;
+        edges[2][3] = 4;
         edges[3][2] = 4;
         edges[3][4] = 1;
-        edges[3][5] = 1;
         edges[4][3] = 1;
+        edges[3][5] = 1;
+        edges[5][3] = 1;
         edges[4][5] = 2;
         edges[4][9] = 9;
-        edges[5][3] = 1;
         edges[5][4] = 2;
         edges[5][6] = 2;
         edges[5][8] = 2; 
@@ -247,13 +247,13 @@ public class GraphDriver
         
         // Create site objects with names and coordinates
         sitesArray[0] = new Sites("Whitehouse", 167, 98);
-        sitesArray[1] = new Sites("Tracys", 201, 134);
+        sitesArray[1] = new Sites("Treacys", 201, 134);
         sitesArray[2] = new Sites("D-Bar", 89, 123);
         sitesArray[3] = new Sites("Holohans", 156, 78);
         sitesArray[4] = new Sites("The Baileys", 234, 167);
         sitesArray[5] = new Sites("The Antique", 189, 45);
         sitesArray[6] = new Sites("Stamps", 67, 234);
-        sitesArray[7] = new Sites("Rockhards", 45, 23);
+        sitesArray[7] = new Sites("Rackards", 45, 23);
         sitesArray[8] = new Sites("Dawsons", 78, 156);
         sitesArray[9] = new Sites("Donohoes", 123, 89);
 
