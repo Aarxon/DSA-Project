@@ -147,15 +147,16 @@ public class GraphDriver
             if(site.equals(SitesArray[i].getName()))
             {
                 rowIndex = i;
+                break;
             }
+        }
 
-            // Check all possible connections from this site
-            for(int col = 0; col < siteAmount; col++)
+        // Check all possible connections from this site
+        for(int col = 0; col < siteAmount; col++)
+        {
+            if(col != rowIndex && edges[rowIndex][col] != 0)
             {
-                if(col != rowIndex && edges[rowIndex][col] != 0)
-                {
-                    System.out.print(SitesArray[col].toString());
-                }
+                System.out.println(SitesArray[col].toString());
             }
         }
     }
@@ -178,18 +179,19 @@ public class GraphDriver
             if(site.equals(SitesArray[i].getName()))
             {
                 rowIndex = i;
+                break;
             }
+        }
 
-            // Find the connection with minimum weight
-            for(int col = 0; col < siteAmount; col++)
+        // Find the connection with minimum weight
+        for(int col = 0; col < siteAmount; col++)
+        {
+            if(col != rowIndex && edges[rowIndex][col] != 0)
             {
-                if(col != rowIndex && edges[rowIndex][col] != 0)
+                 if(col != rowIndex && edges[rowIndex][col] != 0 && edges[rowIndex][col] < minDist)
                 {
-                     if(col != rowIndex && edges[rowIndex][col] != 0 && edges[rowIndex][col] < minDist)
-                    {
-                        minDist = edges[rowIndex][col];
-                        closestIndex = col;
-                    }
+                    minDist = edges[rowIndex][col];
+                    closestIndex = col;
                 }
             }
         }
