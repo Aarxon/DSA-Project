@@ -17,49 +17,50 @@ public class GraphDriver
         String site1;
         String site2;
         int weight;
+        while(menuChoice != 5){
+            System.out.println("Menu:");
+            System.out.println("1. Search for a site");
+            System.out.println("2. Insert a connection between two sites");
+            System.out.println("3. Display all connections for a site");
+            System.out.println("4. Find the closest site to a given site");
+            System.out.println("5. Exit");
 
-        System.out.println("Menu:");
-        System.out.println("1. Search for a site");
-        System.out.println("2. Insert a connection between two sites");
-        System.out.println("3. Display all connections for a site");
-        System.out.println("4. Find the closest site to a given site");
-        System.out.println("5. Exit");
-
-        menuChoice = input.nextInt();
-        input.nextLine(); // Consume newline
+            menuChoice = input.nextInt();
+            input.nextLine(); // Consume newline
         
-        switch(menuChoice)
-        {   
-        case 1:
-            System.out.println("Enter site name to search:");
-            site = input.nextLine();
-            System.out.println(Search(site, siteAmount, SitesArray));
-            break;
-        case 2:
-            System.out.println("Enter site1 name:");
-            site1 = input.nextLine();
-            System.out.println("Enter site2 name:");
-            site2 = input.nextLine();
-            System.out.println("Enter weight:");
-            weight = input.nextInt();
-            Insert(site1, site2, weight, siteAmount, SitesArray, edges);
-            break;
-        case 3:
-            System.out.println("Enter site name to display all connections:");
-            site = input.nextLine();
-            Allcons(site, siteAmount, SitesArray, edges);
-            break;
-        case 4:
-            System.out.println("Enter site name to find the closest site:");
-            site = input.nextLine();
-            Closest(site, siteAmount, SitesArray, edges);
-            break;
-        case 5:
-            System.out.println("Exiting the program.");
-            break;
-        default:
-            System.out.println("Invalid choice. Please try again.");
-            break;
+            switch(menuChoice)
+            {   
+            case 1:
+                System.out.println("Enter site name to search:");
+                site = input.nextLine();
+                System.out.println(Search(site, siteAmount, SitesArray));
+                break;
+            case 2:
+                System.out.println("Enter site1 name:");
+                site1 = input.nextLine();
+                System.out.println("Enter site2 name:");
+                site2 = input.nextLine();
+                System.out.println("Enter weight:");
+                weight = input.nextInt();
+                Insert(site1, site2, weight, siteAmount, SitesArray, edges);
+                break;
+            case 3:
+                System.out.println("Enter site name to display all connections:");
+                site = input.nextLine();
+                Allcons(site, siteAmount, SitesArray, edges);
+                break;
+            case 4:
+                System.out.println("Enter site name to find the closest site:");
+                site = input.nextLine();
+                Closest(site, siteAmount, SitesArray, edges);
+                break;
+            case 5:
+                System.out.println("Exiting the program.");
+                break;
+            default:
+                System.out.println("Invalid choice. Please try again.");
+                break;
+            }
         }
     }
 
